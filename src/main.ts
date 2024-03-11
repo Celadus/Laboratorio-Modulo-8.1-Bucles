@@ -1,4 +1,4 @@
-type Especialidad = "Medico de familia" | "Pediatra" | "Cardiólogo";
+type Especialidad = "Medico de familia" | "Pediatra" | "Cardiologo";
 
 interface Pacientes {
   id: number;
@@ -59,7 +59,7 @@ const pacientes: Pacientes[] = [
     sexo: "Female",
     temperatura: 36.8,
     frecuenciaCardiaca: 110,
-    especialidad: "Cardiólogo",
+    especialidad: "Cardiologo",
     edad: 30,
   },
   {
@@ -160,7 +160,7 @@ Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asign
 const hayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     let pediatraEnCasa = false
     for (let i = 0; i < pacientes.length; i++) {
-        if (pacientes[i].especialidad === 'Pediatra') {
+        if (pacientes[i].especialidad === "Pediatra") {
             pediatraEnCasa = true
         }
     }
@@ -168,9 +168,9 @@ const hayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
 };
 const pediatra = hayPacientesDePediatria(pacientes)
 if (pediatra) {
-    console.log('NO se puede enviar al pediatra a casa')
+    console.log("NO se puede enviar al pediatra a casa")
 } else {
-    console.log('Se puede enviar al pediatra a casa')
+    console.log("Se puede enviar al pediatra a casa")
 }
 
 /*APARTADO 5:
@@ -191,16 +191,16 @@ const cuentaPacientesPorEspecialidad = (
     }
     for (let i = 0; i < pacientes.length; i++) {
         const especialidad = pacientes[i].especialidad
-        if (especialidad === 'Medico de familia') {
+        if (especialidad === "Medico de familia") {
             contadorPacientes.medicoDeFamilia++
         }
-        if (especialidad === 'Pediatra') {
+        if (especialidad === "Pediatra") {
             contadorPacientes.pediatria++
         }
-        if (especialidad === 'Cardiólogo') {
+        if (especialidad === "Cardiologo") {
             contadorPacientes.cardiologia++
         }
     }
     return contadorPacientes
 };
-console.log('Numero total de pacientes asignados por especialidad:', cuentaPacientesPorEspecialidad(pacientes))
+console.log("Numero total de pacientes asignados por especialidad:", cuentaPacientesPorEspecialidad(pacientes))
